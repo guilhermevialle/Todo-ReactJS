@@ -50,6 +50,47 @@ function App() {
             },
             {
                 listName: "terca-feira",
+                color: "green",
+                todos: [
+                    {
+                        title: "jogos",
+                        desc: "dia de jogar o dia todo comendo chocolate",
+                    },
+                ],
+            },
+            {
+                listName: "terca-feira",
+                color: "green",
+                todos: [
+                    {
+                        title: "jogos",
+                        desc: "dia de jogar o dia todo comendo chocolate",
+                    },
+                ],
+            },
+            {
+                listName: "terca-feira",
+                color: "green",
+                todos: [
+                    {
+                        title: "jogos",
+                        desc: "dia de jogar o dia todo comendo chocolate",
+                    },
+                ],
+            },
+            {
+                listName: "terca-feira",
+                color: "green",
+                todos: [
+                    {
+                        title: "jogos",
+                        desc: "dia de jogar o dia todo comendo chocolate",
+                    },
+                ],
+            },
+            {
+                listName: "terca-feira",
+                color: "green",
                 todos: [
                     {
                         title: "jogos",

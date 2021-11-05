@@ -5,11 +5,11 @@ import rightSvg from "./svgs/right-svg.svg";
 export default ({ list }) => {
     return (
         <div className="currentlist">
-            <div>
-                <img src={listSvg} />
+            <div className="lside">
+                <img style={{ backgroundColor: list.color }} src={listSvg} />
                 <span>{list.listName}</span>
             </div>
-            <div>
+            <div className="rside">
                 <span>{list.todos.length}</span>
                 <img src={rightSvg} />
             </div>

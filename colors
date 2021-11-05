@@ -1,4 +1,6 @@
 darkGray = #707275
 lightGray = #cccccc
+lineColor = #7075754f
+hoverGray = #70757531
 darkBackground = #1f1f1f
 iOSBlue = #1b41fb

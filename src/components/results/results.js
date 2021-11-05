@@ -1,3 +1,5 @@
+import "./results.scss";
+
 import { useContext, useEffect, useReducer, useState } from "react";
 import CurrentList from "../currentlist/currentlist";
 import { Global } from "../../App";
