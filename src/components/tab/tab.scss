@@ -6,6 +6,9 @@
     justify-content: space-between;
 
     span {
+        width: 120px;
+        text-align: center;
+
         &:first-child {
             color: #1b41fb;
             cursor: pointer;
