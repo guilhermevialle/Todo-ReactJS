@@ -1,12 +1,37 @@
 import "./newlist.scss";
 import Tab from "../tab/tab";
 import listSvg from "../currentlist/svgs/list-svg.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { Global } from "../../App";
 
 export default () => {
     const [listObject, setListObject] = useState({
-        color: "#00c7bd",
+        listName: "",
+        color: "",
+        todos: [],
     });
+    const [color, setColor] = useState(null);
+    const { data, setData } = useContext(Global);
+    const [createdLists, setCreatedLists] = useState([]);
+
+    useEffect(() => {
+        const span = document.querySelectorAll(".newlist .tab span")[2];
+        console.log({ listObject });
+        console.log({ createdLists });
+
+        if (createdLists.indexOf(listObject) == -1) {
+            setCreatedLists((prev) => {
+                return [...prev, listObject];
+            });
+
+            span.addEventListener("click", () => {
+                setData({
+                    type: "addlist",
+                    value: [...data, listObject],
+                });
+            });
+        }
+    }, [data]);
 
     const colorScheme = [
         "#ff3a30",
@@ -20,32 +45,28 @@ export default () => {
 
     const eventHandler = (evt) => {
         const target = evt.currentTarget;
-        const value = target.value;
+        var value = target.value;
+        value = value.trim();
 
-        if (evt.keyCode == "13") {
-            setListObject((prev) => {
-                prev.listName = value;
-                return prev;
-            });
-        }
+        setListObject((prev) => {
+            prev.listName = value;
+            return prev;
+        });
     };
 
     return (
         <div className="newlist">
             <Tab left="Cancelar" middle="Nova Lista" right="OK" />
             <div className="iconarea">
-                <div
-                    style={{ backgroundColor: listObject.color }}
-                    className="icon-select"
-                >
+                <div style={{ backgroundColor: color }} className="icon-select">
                     <img src={listSvg} />
                 </div>
             </div>
             <div className="inparea">
                 <input
-                    style={{ color: listObject.color }}
+                    style={{ color: color }}
                     type="text"
-                    onKeyUp={(e) => {
+                    onChange={(e) => {
                         eventHandler(e);
                     }}
                 />
@@ -57,8 +78,7 @@ export default () => {
                             style={{ backgroundColor: c }}
                             className="colorTemplate"
                             onClick={() => {
-                                console.log(listObject);
-
+                                setColor(c);
                                 setListObject((prev) => {
                                     prev.color = c;
                                     return prev;

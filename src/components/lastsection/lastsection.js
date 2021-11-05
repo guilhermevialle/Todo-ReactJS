@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 export default () => {
     const { data } = useContext(Global);
-    const allCounts = data.lists.length;
+    const allCounts = data.length;
 
     return (
         <div className="lastsection">

@@ -6,12 +6,11 @@ import { Global } from "../../App";
 
 export default () => {
     const { data } = useContext(Global);
-    const { lists } = data;
     const [arr, setArr] = useState(null);
 
     useEffect(() => {
-        setArr(lists);
-    }, [lists]);
+        setArr(data);
+    }, [data]);
 
     return arr ? (
         <div className="results">
