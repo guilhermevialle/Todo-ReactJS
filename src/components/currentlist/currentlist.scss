@@ -1,0 +1,16 @@
+.currentlist {
+    width: 100%;
+    height: 4%;
+    border-radius: 8px;
+
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    margin: 15px 0;
+
+    div {
+        width: fit-content;
+    }
+}

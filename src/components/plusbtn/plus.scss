@@ -1,0 +1,14 @@
+.plusbtn {
+    width: fit-content;
+    height: 35px;
+    display: flex;
+
+    align-items: center;
+    cursor: pointer;
+
+    span {
+        margin: 0 0 0 10px;
+        color: #1b41fb;
+        font-weight: bolder;
+    }
+}

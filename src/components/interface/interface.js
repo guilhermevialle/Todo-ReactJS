@@ -2,6 +2,9 @@ import "./interface.scss";
 import InputComponent from "../input/input";
 import PreSection from "../presection/presection";
 import LastSection from "../lastsection/lastsection";
+import List from "../list/list";
+import Results from "../results/results";
+import Footer from "../footer/footer";
 
 export default () => {
     return (
@@ -18,6 +21,9 @@ export default () => {
             >
                 Minhas listas
             </h1>
+            <List />
+            <Results />
+            <Footer />
         </div>
     );
 };

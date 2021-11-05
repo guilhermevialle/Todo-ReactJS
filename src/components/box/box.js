@@ -1,6 +1,6 @@
 import "./box.scss";
 
-export default ({ iconProps, title, style }) => {
+export default ({ iconProps, title, style, counts }) => {
     return (
         <div className="box" style={style}>
             <div class="icon">
@@ -13,7 +13,7 @@ export default ({ iconProps, title, style }) => {
                 <span>{title}</span>
             </div>
             <div class="count">
-                <span>5</span>
+                <span>{counts}</span>
             </div>
         </div>
     );

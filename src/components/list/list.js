@@ -1,8 +1,11 @@
 import "./list.scss";
-import { useState } from "react";
+import { useContext } from "react";
+import TodoTemplate from "../todotemplate/todotemplate";
+import { Global } from "../../App";
 
 export default () => {
-    const [todos, setTodos] = useState(null);
+    const { data } = useContext(Global);
+    console.log(data, "At List.js");
 
     return <div className="list"></div>;
 };
