@@ -1,6 +1,7 @@
-import { useReducer, createContext } from "react";
 import "./App.scss";
+import { useReducer, createContext } from "react";
 import Interface from "./components/interface/interface";
+import NewReminder from "./components/newreminder/newreminder";
 
 export const Global = createContext();
 
@@ -107,6 +108,7 @@ function App() {
         <div className="App">
             <Global.Provider value={{ data, setData }}>
                 <Interface />
+                <NewReminder />
             </Global.Provider>
         </div>
     );
