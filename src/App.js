@@ -22,6 +22,28 @@ function App() {
     const ReduceInitalValue = {
         lists: [
             {
+                listName: "domingo",
+                color: "greenyellow",
+                todos: [
+                    {
+                        title: "descansar",
+                        desc: "ver uns filme, serie e afins",
+                    },
+                    {
+                        title: "beber agua",
+                        desc: "beber bastante agua pra n dar pedra no rim",
+                    },
+                    {
+                        title: "comer salgado",
+                        desc: "nesse dia minha mae compra muitos salgados",
+                    },
+                    {
+                        title: "dogs",
+                        desc: "dar ração pros cachorros",
+                    },
+                ],
+            },
+            {
                 listName: "segunda-feira",
                 color: "blue",
                 todos: [

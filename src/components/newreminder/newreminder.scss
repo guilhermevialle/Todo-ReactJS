@@ -31,6 +31,8 @@
                 border-top-right-radius: 10px;
                 position: relative;
 
+                box-shadow: none;
+
                 &::before {
                     content: "";
                     width: 96.6%;
