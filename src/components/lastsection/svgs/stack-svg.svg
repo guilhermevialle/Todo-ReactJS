@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     x="0px"
+     y="0px"
+     width="30"
+     height="30"
+     viewBox="0 0 172 172"
+     style=" fill:#000000;">
+<g fill="none"
+   fill-rule="nonzero"
+   stroke="none"
+   stroke-width="1"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-miterlimit="10"
+   style="mix-blend-mode: normal">
+<path d="M0,172v-172h172v172z" />
+<g fill="#ffffff">
+<path d="M51.6,22.93333v11.46667c0,9.50013 7.69987,17.2 17.2,17.2h34.4c9.50013,0 17.2,-7.69987 17.2,-17.2v-11.46667zM34.4,63.06667v17.2c0,9.50013 7.69987,17.2 17.2,17.2h68.8c9.50013,0 17.2,-7.69987 17.2,-17.2v-17.2zM17.2,108.93333v22.93333c0,9.50013 7.69987,17.2 17.2,17.2h103.2c9.50013,0 17.2,-7.69987 17.2,-17.2v-22.93333z" />
+</g>
+</g>
+</svg>
