@@ -7,12 +7,12 @@ export default () => {
     return (
         <div className="presection">
             <Box
-                iconProps={{ img: calendarSvg, bgColor: "#3498db" }}
+                iconProps={{ img: calendarSvg, bgColor: "#00c7bd" }}
                 title="Hoje"
                 style={{ width: "47%" }}
             />
             <Box
-                iconProps={{ img: calendar2Svg, bgColor: "#ff5f15" }}
+                iconProps={{ img: calendar2Svg, bgColor: "#ff3a30" }}
                 title="Programados"
                 style={{ width: "47%" }}
             />

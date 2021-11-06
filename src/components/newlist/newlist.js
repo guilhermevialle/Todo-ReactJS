@@ -5,33 +5,12 @@ import { useState, useEffect, useContext } from "react";
 import { Global } from "../../App";
 
 export default () => {
-    const [listObject, setListObject] = useState({
-        listName: "",
-        color: "",
-        todos: [],
-    });
-    const [color, setColor] = useState(null);
-    const { data, setData } = useContext(Global);
-    const [createdLists, setCreatedLists] = useState([]);
+    let { data, setData } = useContext(Global);
+    data = data.listState;
 
-    useEffect(() => {
-        const span = document.querySelectorAll(".newlist .tab span")[2];
-        console.log({ listObject });
-        console.log({ createdLists });
-
-        if (createdLists.indexOf(listObject) == -1) {
-            setCreatedLists((prev) => {
-                return [...prev, listObject];
-            });
-
-            span.addEventListener("click", () => {
-                setData({
-                    type: "addlist",
-                    value: [...data, listObject],
-                });
-            });
-        }
-    }, [data]);
+    // const [arr, setArr] = useState([]);
+    const [color, setColor] = useState("#00c7bd");
+    const [title, setTitle] = useState(null);
 
     const colorScheme = [
         "#ff3a30",
@@ -43,20 +22,23 @@ export default () => {
         "#a2855e",
     ];
 
-    const eventHandler = (evt) => {
-        const target = evt.currentTarget;
-        var value = target.value;
-        value = value.trim();
-
-        setListObject((prev) => {
-            prev.listName = value;
-            return prev;
-        });
-    };
-
     return (
         <div className="newlist">
-            <Tab left="Cancelar" middle="Nova Lista" right="OK" />
+            <Tab
+                rightCb={() => {
+                    setData({
+                        type: "addlist",
+                        value: {
+                            listName: title,
+                            color: color,
+                            todos: [],
+                        },
+                    });
+                }}
+                left="Cancelar"
+                middle="Nova Lista"
+                right="OK"
+            />
             <div className="iconarea">
                 <div style={{ backgroundColor: color }} className="icon-select">
                     <img src={listSvg} />
@@ -67,24 +49,28 @@ export default () => {
                     style={{ color: color }}
                     type="text"
                     onChange={(e) => {
-                        eventHandler(e);
+                        const target = e.currentTarget;
+                        var value = target.value;
+                        value = value.trim();
+
+                        if (value == "") {
+                            return;
+                        } else {
+                            setTitle(value);
+                        }
                     }}
                 />
             </div>
             <div className="colorselect">
                 {colorScheme.map((c) => {
                     return (
-                        <div
+                        <button
                             style={{ backgroundColor: c }}
                             className="colorTemplate"
                             onClick={() => {
                                 setColor(c);
-                                setListObject((prev) => {
-                                    prev.color = c;
-                                    return prev;
-                                });
                             }}
-                        ></div>
+                        ></button>
                     );
                 })}
             </div>

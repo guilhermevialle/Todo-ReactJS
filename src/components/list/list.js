@@ -4,8 +4,8 @@ import TodoTemplate from "../todotemplate/todotemplate";
 import { Global } from "../../App";
 
 export default () => {
-    const { data } = useContext(Global);
-    console.log(data, "At List.js");
+    let { data } = useContext(Global);
+    data = data.listState;
 
     return <div className="list"></div>;
 };

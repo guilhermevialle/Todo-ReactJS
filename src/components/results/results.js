@@ -5,8 +5,9 @@ import CurrentList from "../currentlist/currentlist";
 import { Global } from "../../App";
 
 export default () => {
-    const { data } = useContext(Global);
+    let { data } = useContext(Global);
     const [arr, setArr] = useState(null);
+    data = data.listState;
 
     useEffect(() => {
         setArr(data);

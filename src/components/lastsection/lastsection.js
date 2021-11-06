@@ -5,8 +5,9 @@ import { Global } from "../../App";
 import { useContext } from "react";
 
 export default () => {
-    const { data } = useContext(Global);
+    let { data } = useContext(Global);
     const allCounts = data.length;
+    data = data.listState;
 
     return (
         <div className="lastsection">

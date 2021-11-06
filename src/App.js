@@ -10,30 +10,34 @@ function App() {
     const Reduce = (state, action) => {
         switch (action.type) {
             case "addlist":
-                state = action.value;
-                return state;
-
+                console.log(state, "At Global state");
+                return {
+                    ...state,
+                    listState: [...state.listState, action.value],
+                };
             default:
                 return state;
         }
     };
 
-    const ReduceInitalValue = [
-        {
-            listName: "hoje",
-            color: "#00c7bd",
-            todos: [
-                {
-                    title: "academia",
-                    desc: "fazer treino de costas",
-                },
-                {
-                    title: "terminar app",
-                    desc: "terminar reminder app baseado em iOS",
-                },
-            ],
-        },
-    ];
+    const ReduceInitalValue = {
+        listState: [
+            {
+                listName: "hoje",
+                color: "#00c7bd",
+                todos: [
+                    {
+                        title: "academia",
+                        desc: "fazer treino de costas",
+                    },
+                    {
+                        title: "terminar app",
+                        desc: "terminar reminder app baseado em iOS",
+                    },
+                ],
+            },
+        ],
+    };
 
     const [data, setData] = useReducer(Reduce, ReduceInitalValue);
 
