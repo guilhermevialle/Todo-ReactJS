@@ -21,6 +21,10 @@
 
     cursor: pointer;
 
+    &:hover {
+        background-color: #70757531;
+    }
+
     .icon {
         grid-area: icon;
 

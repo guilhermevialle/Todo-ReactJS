@@ -26,14 +26,18 @@ export default () => {
         <div className="newlist">
             <Tab
                 rightCb={() => {
-                    setData({
-                        type: "addlist",
-                        value: {
-                            listName: title,
-                            color: color,
-                            todos: [],
-                        },
-                    });
+                    if (title) {
+                        setData({
+                            type: "addlist",
+                            value: {
+                                listName: title,
+                                color: color,
+                                todos: [],
+                            },
+                        });
+                    } else {
+                        return;
+                    }
                 }}
                 left="Cancelar"
                 middle="Nova Lista"
@@ -54,6 +58,7 @@ export default () => {
                         value = value.trim();
 
                         if (value == "") {
+                            setTitle(null);
                             return;
                         } else {
                             setTitle(value);
