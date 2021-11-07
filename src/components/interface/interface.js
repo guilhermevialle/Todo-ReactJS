@@ -5,11 +5,11 @@ import LastSection from "../lastsection/lastsection";
 import List from "../list/list";
 import Results from "../results/results";
 import Footer from "../footer/footer";
-import { useEffect } from "react";
 
 export default () => {
     return (
         <div className="interface">
+            <List />
             <InputComponent placeholder="Buscar" />
             <PreSection />
             <LastSection />
@@ -22,7 +22,6 @@ export default () => {
             >
                 Minhas listas
             </h1>
-            <List />
             <Results />
             <Footer />
         </div>

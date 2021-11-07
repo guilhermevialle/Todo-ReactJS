@@ -21,6 +21,12 @@ function App() {
                     listState: action.value,
                 };
 
+            case "changecurrentList":
+                return {
+                    ...state,
+                    currentList: action.value,
+                };
+
             case "addlist":
                 return {
                     ...state,
@@ -33,6 +39,16 @@ function App() {
 
     const ReduceInitalValue = {
         listIndex: 0,
+        currentList: [
+            {
+                title: "academia",
+                desc: "fazer treino de costas",
+            },
+            {
+                title: "terminar app",
+                desc: "terminar reminder app baseado em iOS",
+            },
+        ],
         listState: [
             {
                 listName: "hoje",

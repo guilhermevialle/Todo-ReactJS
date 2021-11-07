@@ -31,14 +31,22 @@ export default () => {
             <ListSlider />
             <Tab
                 rightCb={() => {
-                    listState[to].todos.push({
-                        title: desc,
-                    });
+                    if (
+                        title != null &&
+                        title != "" &&
+                        desc != null &&
+                        desc != ""
+                    ) {
+                        listState[to].todos.push({
+                            title,
+                            desc,
+                        });
 
-                    setData({
-                        type: "addreminder",
-                        value: listState,
-                    });
+                        setData({
+                            type: "addreminder",
+                            value: listState,
+                        });
+                    }
                 }}
                 left="Cancelar"
                 middle="Novo Lembrete"

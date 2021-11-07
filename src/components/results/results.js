@@ -6,17 +6,12 @@ import { Global } from "../../App";
 
 export default () => {
     let { data } = useContext(Global);
-    const [arr, setArr] = useState(null);
     data = data.listState;
-
-    useEffect(() => {
-        setArr(data);
-    }, [data]);
 
     return data ? (
         <div className="results">
-            {data.map((list) => {
-                return <CurrentList list={list} />;
+            {data.map((list, index) => {
+                return <CurrentList list={list} index={index} />;
             })}
         </div>
     ) : (
