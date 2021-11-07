@@ -15,6 +15,15 @@ function App() {
                     listIndex: action.value,
                 };
 
+            case "addreminder":
+                let val = action.value;
+                const target = state.listState[val[0]];
+                target.todos = [...target.todos, val[1]].flat();
+
+                console.log(state.listState[val[0]]);
+
+                return state;
+
             case "addlist":
                 return {
                     ...state,

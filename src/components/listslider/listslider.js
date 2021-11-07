@@ -4,6 +4,7 @@ import { useEffect, useContext, useState } from "react";
 import Tab from "../tab/tab";
 import listSvg from "../currentlist/svgs/list-svg.svg";
 import check from "./svgs/check-svg.svg";
+import gsap, { Elastic, Circ } from "gsap";
 
 export default () => {
     const { data, setData } = useContext(Global);
@@ -12,9 +13,23 @@ export default () => {
 
     console.log(selected);
 
+    const sliderToRight = () => {
+        gsap.to(".listSlider", {
+            right: "-110%",
+            ease: Circ.ease,
+            duration: 0.4,
+        });
+    };
+
     return (
         <div className="listSlider">
-            <Tab left="Novo Lembrete" middle="Lista" right=" " />
+            <Tab
+                rightCb={sliderToRight}
+                leftCb={sliderToRight}
+                left="Novo Lembrete"
+                middle="Lista"
+                right=" "
+            />
             <div className="results">
                 {listState.map((l, index) => {
                     return (

@@ -4,6 +4,7 @@ import { Global } from "../../App";
 import { useContext, useEffect, useState } from "react";
 import rightSvg from "../currentlist/svgs/right-svg.svg";
 import ListSlider from "../listslider/listslider";
+import gsap, { Elastic } from "gsap";
 
 export default () => {
     const { data, setData } = useContext(Global);
@@ -13,6 +14,14 @@ export default () => {
     const [desc, setDesc] = useState(null);
     const [to, setTo] = useState(listIndex);
 
+    const sliderToLeft = () => {
+        gsap.to(".listSlider", {
+            right: 0,
+            ease: Elastic.ease,
+            duration: 0.6,
+        });
+    };
+
     useEffect(() => {
         setTo(listIndex);
     }, [listIndex]);
@@ -21,7 +30,12 @@ export default () => {
         <div className="newreminder">
             <ListSlider />
             <Tab
-                rightCb={() => {}}
+                rightCb={() => {
+                    setData({
+                        type: "addreminder",
+                        value: [to, { title: title, desc: desc }],
+                    });
+                }}
                 left="Cancelar"
                 middle="Novo Lembrete"
                 right="Adicionar"
@@ -49,7 +63,12 @@ export default () => {
                 </div>
             </div>
 
-            <div className="select">
+            <div
+                className="select"
+                onClick={() => {
+                    sliderToLeft();
+                }}
+            >
                 <span>Lista</span>
                 <div>
                     <div

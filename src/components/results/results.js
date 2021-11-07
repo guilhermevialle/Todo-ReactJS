@@ -10,6 +10,7 @@ export default () => {
     data = data.listState;
 
     useEffect(() => {
+        console.log(data);
         setArr(data);
     }, [data]);
 
