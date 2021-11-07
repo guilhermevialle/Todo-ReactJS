@@ -26,10 +26,21 @@ export default () => {
         setTo(listIndex);
     }, [listIndex]);
 
+    const close = () => {
+        gsap.to(".newreminder", {
+            right: "-110%",
+            ease: Elastic.ease,
+            duration: 0.6,
+        });
+    };
+
     return (
         <div className="newreminder">
             <ListSlider />
             <Tab
+                leftCb={() => {
+                    close();
+                }}
                 rightCb={() => {
                     if (
                         title != null &&
@@ -46,6 +57,10 @@ export default () => {
                             type: "addreminder",
                             value: listState,
                         });
+
+                        close();
+                    } else {
+                        return;
                     }
                 }}
                 left="Cancelar"

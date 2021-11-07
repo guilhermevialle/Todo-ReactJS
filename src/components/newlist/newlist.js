@@ -3,6 +3,7 @@ import Tab from "../tab/tab";
 import listSvg from "../currentlist/svgs/list-svg.svg";
 import { useState, useEffect, useContext } from "react";
 import { Global } from "../../App";
+import gsap, { Elastic } from "gsap";
 
 export default () => {
     let { data, setData } = useContext(Global);
@@ -21,9 +22,20 @@ export default () => {
         "#a2855e",
     ];
 
+    const close = () => {
+        gsap.to(".newlist", {
+            right: "110%",
+            ease: Elastic.ease,
+            duration: 0.6,
+        });
+    };
+
     return (
         <div className="newlist">
             <Tab
+                leftCb={() => {
+                    close();
+                }}
                 rightCb={() => {
                     if (title) {
                         setData({
@@ -34,6 +46,7 @@ export default () => {
                                 todos: [],
                             },
                         });
+                        close();
                     } else {
                         return;
                     }

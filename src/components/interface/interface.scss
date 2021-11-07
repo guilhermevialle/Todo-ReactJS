@@ -1,6 +1,6 @@
 .interface {
     width: 40%;
-    height: 33%;
+    height: 82vh;
     background-color: #121212;
 
     padding: 30px;
@@ -11,5 +11,5 @@
         rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
