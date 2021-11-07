@@ -30,7 +30,6 @@
     }
 
     div {
-        width: fit-content;
         display: flex;
         justify-content: space-between;
 
@@ -53,12 +52,12 @@
     .rside {
         span {
             color: #ccc;
-            margin: 0 5px 0 0;
+            margin: 0 15px 0 0;
         }
 
         img {
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
         }
     }
 }

@@ -4,7 +4,7 @@ import TodoTemplate from "../todotemplate/todotemplate";
 import { Global } from "../../App";
 import Tab from "../tab/tab";
 import gsap, { Circ } from "gsap";
-import currentlist from "../currentlist/currentlist";
+import PlustBtn from "../plusbtn/plus";
 
 export default () => {
     const { data } = useContext(Global);
@@ -31,6 +31,15 @@ export default () => {
             {thisObj.todos.map((obj) => {
                 return <TodoTemplate data={obj} />;
             })}
+
+            <PlustBtn
+                func={() => {
+                    gsap.to(".newreminder", {
+                        right: 0,
+                    });
+                }}
+                text="Novo Lembrete"
+            />
         </div>
     ) : (
         ""

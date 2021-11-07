@@ -27,6 +27,14 @@ export default ({ list, index }) => {
                     type: "changecurrentList",
                     value: target,
                 });
+                setData({
+                    type: "selectedlist",
+                    value: index,
+                });
+                setData({
+                    type: "newReminderInsideList",
+                    value: true,
+                });
             }}
         >
             <div className="lside">

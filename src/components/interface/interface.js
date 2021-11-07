@@ -6,12 +6,16 @@ import List from "../list/list";
 import Results from "../results/results";
 import Footer from "../footer/footer";
 import gsap, { Circ } from "gsap";
+import { useContext } from "react";
+import { Global } from "../../App";
 
 //tabs
 import NewReminder from "../../components/newreminder/newreminder";
 import NewList from "../../components/newlist/newlist";
 
 export default () => {
+    const { data, setData } = useContext(Global);
+
     return (
         <div className="interface">
             <InputComponent placeholder="Buscar" />
@@ -36,6 +40,11 @@ export default () => {
                     });
                 }}
                 func={() => {
+                    setData({
+                        type: "newReminderInsideList",
+                        value: null,
+                    });
+
                     gsap.to(".newreminder", {
                         right: 0,
                         ease: Circ.ease,

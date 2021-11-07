@@ -13,6 +13,12 @@ function App() {
                     listIndex: action.value,
                 };
 
+            case "newReminderInsideList":
+                return {
+                    ...state,
+                    newReminderInsideList: action.value,
+                };
+
             case "addreminder":
                 return {
                     ...state,
@@ -52,6 +58,7 @@ function App() {
                 ],
             },
         ],
+        newReminderInsideList: null,
         listIndex: 0,
         currentList: {
             listName: "hoje",

@@ -7,14 +7,19 @@
     right: 0;
     top: 0;
     z-index: 2;
-    padding: 30px;
 
+    padding: 30px;
     right: -110%;
     top: 0;
-    border-radius: 30px;
 
+    border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
         rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+    .plusbtn {
+        position: absolute;
+        bottom: 20px;
+    }
 
     h2 {
         color: #fff;

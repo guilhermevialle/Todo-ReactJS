@@ -8,7 +8,7 @@ import gsap, { Elastic } from "gsap";
 
 export default () => {
     const { data, setData } = useContext(Global);
-    const { listState, listIndex } = data;
+    const { listState, listIndex, newReminderInsideList } = data;
 
     const [title, setTitle] = useState(null);
     const [desc, setDesc] = useState(null);
@@ -90,22 +90,26 @@ export default () => {
                 </div>
             </div>
 
-            <div
-                className="select"
-                onClick={() => {
-                    sliderToLeft();
-                }}
-            >
-                <span>Lista</span>
-                <div>
-                    <div
-                        className="circ"
-                        style={{ backgroundColor: listState[to].color }}
-                    ></div>
-                    <span>{listState[to].listName}</span>
-                    <img src={rightSvg} />
+            {newReminderInsideList ? (
+                ""
+            ) : (
+                <div
+                    className="select"
+                    onClick={() => {
+                        sliderToLeft();
+                    }}
+                >
+                    <span>Lista</span>
+                    <div>
+                        <div
+                            className="circ"
+                            style={{ backgroundColor: listState[to].color }}
+                        ></div>
+                        <span>{listState[to].listName}</span>
+                        <img src={rightSvg} />
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
