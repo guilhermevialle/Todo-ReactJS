@@ -9,8 +9,13 @@ export const Global = createContext();
 function App() {
     const Reduce = (state, action) => {
         switch (action.type) {
+            case "selectedlist":
+                return {
+                    ...state,
+                    listIndex: action.value,
+                };
+
             case "addlist":
-                console.log(state, "At Global state");
                 return {
                     ...state,
                     listState: [...state.listState, action.value],
@@ -21,6 +26,7 @@ function App() {
     };
 
     const ReduceInitalValue = {
+        listIndex: 0,
         listState: [
             {
                 listName: "hoje",
