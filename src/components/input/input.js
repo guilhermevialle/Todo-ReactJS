@@ -1,12 +1,18 @@
 import "./input.scss";
 import searchSvg from "./svgs/search-svg.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Global } from "../../App";
+import listslider from "../listslider/listslider";
 
 export default ({ placeholder }) => {
-    const [value, setValue] = useState(null);
+    const { data, setData } = useContext(Global);
+    const { listState } = data;
 
     const eventHandler = (value) => {
-        setValue(value);
+        setData({
+            type: "searchinp",
+            value: value,
+        });
         return;
     };
 

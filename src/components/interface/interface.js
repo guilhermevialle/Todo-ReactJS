@@ -6,7 +6,7 @@ import List from "../list/list";
 import Results from "../results/results";
 import Footer from "../footer/footer";
 import gsap, { Circ } from "gsap";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Global } from "../../App";
 
 //tabs

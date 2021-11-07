@@ -1,16 +1,21 @@
 import "./results.scss";
 
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CurrentList from "../currentlist/currentlist";
 import { Global } from "../../App";
 
 export default () => {
     let { data } = useContext(Global);
-    data = data.listState;
+    const { listState, searchinp } = data;
+    const [x, setX] = useState(null);
 
-    return data ? (
+    useEffect(() => {
+        setX(listState.filter((l) => l.listName.includes(searchinp) != -1));
+    }, [searchinp]);
+
+    return x ? (
         <div className="results">
-            {data.map((list, index) => {
+            {listState.map((list, index) => {
                 return <CurrentList list={list} index={index} />;
             })}
         </div>

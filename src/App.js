@@ -13,6 +13,12 @@ function App() {
                     listIndex: action.value,
                 };
 
+            case "searchinp":
+                return {
+                    ...state,
+                    searchinp: action.value,
+                };
+
             case "newReminderInsideList":
                 return {
                     ...state,
@@ -57,7 +63,30 @@ function App() {
                     },
                 ],
             },
+            {
+                listName: "amanha",
+                color: "#00c7bd",
+                todos: [
+                    {
+                        title: "jogar bola",
+                        desc: "das 14 ate umas 19",
+                    },
+                    {
+                        title: "cagar",
+                        desc: "cagar na hora certinha llllkkk",
+                    },
+                    {
+                        title: "ver filme",
+                        desc: "filmes da marvel",
+                    },
+                    {
+                        title: "mia pika",
+                        desc: "transar",
+                    },
+                ],
+            },
         ],
+        searchinp: null,
         newReminderInsideList: null,
         listIndex: 0,
         currentList: {
