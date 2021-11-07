@@ -8,7 +8,6 @@ export default () => {
     let { data, setData } = useContext(Global);
     data = data.listState;
 
-    // const [arr, setArr] = useState([]);
     const [color, setColor] = useState("#00c7bd");
     const [title, setTitle] = useState(null);
 

@@ -11,8 +11,6 @@ export default () => {
     const { listState } = data;
     const [selected, setSelected] = useState(0);
 
-    console.log(selected);
-
     const sliderToRight = () => {
         gsap.to(".listSlider", {
             right: "-110%",

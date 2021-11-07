@@ -31,9 +31,13 @@ export default () => {
             <ListSlider />
             <Tab
                 rightCb={() => {
+                    listState[to].todos.push({
+                        title: desc,
+                    });
+
                     setData({
                         type: "addreminder",
-                        value: [to, { title: title, desc: desc }],
+                        value: listState,
                     });
                 }}
                 left="Cancelar"

@@ -3,6 +3,8 @@ import listSvg from "./svgs/list-svg.svg";
 import rightSvg from "./svgs/right-svg.svg";
 
 export default ({ list }) => {
+    console.log(list, "At current list");
+
     return (
         <div className="currentlist">
             <div className="lside">

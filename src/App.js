@@ -16,13 +16,10 @@ function App() {
                 };
 
             case "addreminder":
-                let val = action.value;
-                const target = state.listState[val[0]];
-                target.todos = [...target.todos, val[1]].flat();
-
-                console.log(state.listState[val[0]]);
-
-                return state;
+                return {
+                    ...state,
+                    listState: action.value,
+                };
 
             case "addlist":
                 return {

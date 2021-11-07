@@ -10,13 +10,12 @@ export default () => {
     data = data.listState;
 
     useEffect(() => {
-        console.log(data);
         setArr(data);
     }, [data]);
 
-    return arr ? (
+    return data ? (
         <div className="results">
-            {arr.map((list) => {
+            {data.map((list) => {
                 return <CurrentList list={list} />;
             })}
         </div>
