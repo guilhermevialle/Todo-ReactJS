@@ -28,9 +28,11 @@ export default () => {
             <Tab leftCb={sliderToRight} left="￩ Listas" middle=" " right=" " />
             <h2>{thisObj.listName}</h2>
 
-            {thisObj.todos.map((obj) => {
-                return <TodoTemplate data={obj} />;
-            })}
+            <div className="todosResults">
+                {thisObj.todos.map((obj) => {
+                    return <TodoTemplate data={obj} />;
+                })}
+            </div>
 
             <PlustBtn
                 func={() => {

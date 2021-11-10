@@ -50,8 +50,8 @@ function App() {
     const ReduceInitalValue = {
         listState: [
             {
-                listName: "hoje",
-                color: "#00c7bd",
+                listName: "segunda feira",
+                color: "#ff9500",
                 todos: [
                     {
                         title: "academia",
@@ -64,42 +64,66 @@ function App() {
                 ],
             },
             {
-                listName: "amanha",
-                color: "#00c7bd",
+                listName: "quarta feira",
+                color: "#34c759",
                 todos: [
                     {
                         title: "jogar bola",
                         desc: "das 14 ate umas 19",
                     },
                     {
-                        title: "cagar",
-                        desc: "cagar na hora certinha llllkkk",
+                        title: "consertar celular",
+                        desc: "trocar tela de 5 celulares",
                     },
                     {
-                        title: "ver filme",
-                        desc: "filmes da marvel",
+                        title: "maratonar",
+                        desc: "terminar de assistir filmes da marvel",
+                    },
+                ],
+            },
+            {
+                listName: "sexta feira",
+                color: "#a2855e",
+                todos: [
+                    {
+                        title: "descansar",
+                        desc: "talvez sair com meus amigos a noite para comer algo",
+                    },
+                ],
+            },
+            {
+                listName: "domingo",
+                color: "#a2855e",
+                todos: [
+                    {
+                        title: "dormir no minimo 10h pra descansar o corpo",
+                        desc: "10h - 12h",
                     },
                     {
-                        title: "mia pika",
-                        desc: "transar",
+                        title: "programar",
+                        desc: "aprender mais sobre javascript e iniciar um novo projeto",
+                    },
+                    {
+                        title: "fazer caminhada",
+                        desc: "fazer uma caminhada na parte da tarde com o cachorro ou com amigos",
                     },
                 ],
             },
         ],
-        searchinp: null,
+        searchinp: "",
         newReminderInsideList: null,
         listIndex: 0,
         currentList: {
-            listName: "hoje",
-            color: "#00c7bd",
+            listName: "'hoje'",
+            color: "",
             todos: [
                 {
-                    title: "academia",
-                    desc: "fazer treino de costas",
+                    title: "",
+                    desc: "",
                 },
                 {
-                    title: "terminar app",
-                    desc: "terminar reminder app baseado em iOS",
+                    title: "",
+                    desc: "",
                 },
             ],
         },

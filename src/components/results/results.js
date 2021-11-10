@@ -10,23 +10,25 @@ export default () => {
     const { listState, searchinp } = data;
 
     useEffect(() => {
+        const upcase = searchinp.toUpperCase();
+
         const res = document.querySelectorAll(
             ".results .currentlist .lside span"
         );
 
-        for (let x = 0; x < res.length; x++) {
-            let txtValue = res[x].innerText || res[x].textContent;
+        res.forEach((x, index) => {
+            var txtValue = x.textContent || x.innerText;
 
-            if (txtValue.toUpperCase().indexOf(searchinp) > -1) {
+            if (txtValue.toUpperCase().indexOf(upcase) > -1) {
                 document.querySelectorAll(".results .currentlist")[
-                    x
+                    index
                 ].style.display = "";
             } else {
                 document.querySelectorAll(".results .currentlist")[
-                    x
+                    index
                 ].style.display = "none";
             }
-        }
+        });
     }, [searchinp]);
 
     return listState ? (

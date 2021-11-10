@@ -4,6 +4,7 @@ import listSvg from "../currentlist/svgs/list-svg.svg";
 import { useState, useEffect, useContext } from "react";
 import { Global } from "../../App";
 import gsap, { Elastic } from "gsap";
+import getTime from "../tools/getTime";
 
 export default () => {
     let { data, setData } = useContext(Global);
