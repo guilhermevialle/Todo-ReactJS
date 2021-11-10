@@ -10,5 +10,10 @@
         margin: 0 0 0 10px;
         color: #1b41fb;
         font-weight: bolder;
+
+        &:hover {
+            filter: contrast(2);
+            filter: brightness(1.5);
+        }
     }
 }

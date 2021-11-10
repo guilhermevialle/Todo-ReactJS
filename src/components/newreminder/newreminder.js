@@ -32,6 +32,9 @@ export default () => {
             ease: Elastic.ease,
             duration: 0.6,
         });
+        document
+            .querySelectorAll(".aroundInps input")
+            .forEach((i) => (i.value = ""));
     };
 
     return (

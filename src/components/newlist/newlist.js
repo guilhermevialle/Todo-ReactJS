@@ -29,6 +29,7 @@ export default () => {
             ease: Elastic.ease,
             duration: 0.6,
         });
+        document.querySelector(".inparea input").value = "";
     };
 
     return (

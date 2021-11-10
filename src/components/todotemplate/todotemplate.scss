@@ -1,6 +1,6 @@
 .todotemplate {
     width: 100%;
-    height: 50px;
+    height: 55px;
 
     display: grid;
     grid-template-columns: 11.5% 88.5%;
@@ -14,7 +14,7 @@
         "check todo-title"
         "check todo-desc";
 
-    margin: 0 0 5px 0;
+    margin: 0 0 15px 0;
 
     .check {
         grid-area: check;
@@ -173,6 +173,7 @@
     .todo-desc {
         grid-area: todo-desc;
 
+        margin: 3px 0 0 0;
         color: #707275;
         border-bottom: 1px solid #70727573;
     }

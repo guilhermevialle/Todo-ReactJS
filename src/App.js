@@ -1,10 +1,21 @@
 import "./App.scss";
-import { useReducer, createContext } from "react";
+import { useEffect, useReducer, createContext } from "react";
 import Interface from "./components/interface/interface";
+import gsap, { Elastic } from "gsap";
 
 export const Global = createContext();
 
 function App() {
+    useEffect(() => {
+        gsap.from(".interface", {
+            yPercent: -15,
+            opacity: 0,
+            ease: Elastic.easeOut,
+            duration: 0.7,
+            delay: 0.5,
+        });
+    }, []);
+
     const Reduce = (state, action) => {
         switch (action.type) {
             case "selectedlist":

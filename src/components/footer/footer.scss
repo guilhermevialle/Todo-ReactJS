@@ -8,5 +8,10 @@
 
     span {
         cursor: pointer;
+
+        &:hover {
+            filter: contrast(2);
+            filter: brightness(1.5);
+        }
     }
 }

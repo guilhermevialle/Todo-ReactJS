@@ -24,7 +24,7 @@ export default ({ placeholder }) => {
                     eventHandler(e.currentTarget.value);
                 }}
                 className="inp"
-                type="text"
+                type="search"
                 placeholder={placeholder}
             />
         </div>
